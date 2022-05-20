@@ -2,24 +2,30 @@
 <html xmlns:th="http://thymeleaf.org">
 	
 	<head>
-		<title>Create Account</title>
-		<link rel="stylesheet" 
-         th:href="@{/css/user.css}" />
-         
-		<!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<title>Account Name</title>
+		
+		<link rel="stylesheet" th:href="@{/css/user.css}" />
+		
+		<meta charset="utf-8">
+	        <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	       <!-- Bootstrap core CSS -->
+	       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
 	</head>
 	
 	<body>
+		
 	   <div class="container">
+		   
 		<h4 class="mt-4">Create Your Account</h4>
 		
 		<form action="" th:object="${user}" method="POST" class="mt-4">
+			
 		  <div class="text-secondary">	
+			  
 			<div>
 				<input type="text" th:field="*{username}" class="form-control mb-4 col-4" placeholder=" Username"/>
 			</div>
@@ -35,9 +41,13 @@
 			<div>
 			  <input class="btn btn-outline-secondary btn-sm mb-3" type="submit" value="Create Account" />
 			</div>
-		  </div>	
+			  
+		  </div>
+			
 		</form>
-		</div >
+		   
+	     </div >
+		
 	</body>
 	
 </html>
