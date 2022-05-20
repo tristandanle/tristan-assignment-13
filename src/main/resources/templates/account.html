@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+	<head>
+		<title>Account Name</title>
+		<link rel="stylesheet" 
+         th:href="@{/css/user.css}" />
+		
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	    <!-- Bootstrap core CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+	
+	<body>
+	 
+	 <div class="container">
+	    
+		<h3 class="mt-4"th:text="${account.accountName}"></h3>
+		
+		<form action="" th:objet="user" method="post">
+		  <div class="text-secondary">
+			<input type="hidden" th:field="*{account.accountId}"/>
+			
+			<div class="mt-4">
+				Account Name <input type="text" th:field="*{account.accountName}" class="form-control mb-4 col-4" placeholder=" Account Name"/>
+			</div>
+			
+			<input class="btn btn-outline-secondary btn-sm mb-3" type="submit" value="Save Account"/>
+		  </div>
+			<hr/>
+			<a th:href="@{/user/{userId}(userId=*{userId})}">Back</a>
+		</form>
+		
+	 </div>
+	</body>
+</html>
