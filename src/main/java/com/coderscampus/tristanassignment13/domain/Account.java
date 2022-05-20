@@ -44,7 +44,7 @@ public class Account {
 	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
 	}
-	@ManyToMany(mappedBy = "accounts", cascade = CascadeType.PERSIST)
+	@ManyToMany(mappedBy = "accounts", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
 	public List<User> getUsers() {
 		return users;
 	}
