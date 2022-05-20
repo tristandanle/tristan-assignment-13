@@ -31,7 +31,6 @@ public class Address {
 	}
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	//@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
 	@NotFound(action = NotFoundAction.IGNORE)
 	@MapsId
 	@JoinColumn(name="user_id")
