@@ -3,36 +3,50 @@
 	<head>
 		<title>Users</title>
 		
-		<link rel="stylesheet" 
-         th:href="@{/css/user.css}" />
+		<link rel="stylesheet" th:href="@{/css/user.css}" />
 		
 		<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	        <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	    <!-- Bootstrap core CSS -->
-	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	       <!-- Bootstrap core CSS -->
+	       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
 
 	</head>
+	
 	<body>
+		
 	  <div class="container">
+		  
 		<h3 class="mt-4 mb-4">Users</h3>
 	 
 		<div th:each="user : ${users}">
+			
 		  <div class="text-secondary">	 
+			  
 		    Id : <a th:href="@{/user/{userId}(userId=${user.userId})}" th:text="${user.userId}"></a><br/>
 			
-			<span th:text="${user.username}"></span><br/>
-			<span th:text="${user.name}"></span><br/>
-			<span th:text="${user.password}"></span>
+		    <span th:text="${user.username}"></span><br/>
+			  
+		    <span th:text="${user.name}"></span><br/>
+			  
+		    <span th:text="${user.password}"></span>
+			  
 		  </div>	
-			<div th:each="account : ${user.accounts}">
-				<a th:href="@{/user/{userId}/accounts/{accountId}(userId=${user.userId},accountId=${account.accountId})}" th:text="${account.accountName}"></a>
-			</div>
 			
-			<hr/>
-		</div>
-	  </div>
+		  <div th:each="account : ${user.accounts}">
+			  
+		       <a th:href="@{/user/{userId}/accounts/{accountId}(userId=${user.userId},accountId=${account.accountId})}" th:text="${account.accountName}"></a>
+			
+		 </div>
+			
+		<hr/>
+			
+	       </div>
+	
+	    </div>
+      
 	</body>
+	
 </html>
